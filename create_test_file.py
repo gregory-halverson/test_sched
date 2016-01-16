@@ -20,7 +20,6 @@ with open(filename, 'w') as f:
     sleep(60)
     end = datetime.utcnow()
     f.write('finished test at ' + str(end) + '\n')
-    f.write('test content')
 
 if os.path.exists(filename):
     print("test file '%s' successfully created" % filename)
