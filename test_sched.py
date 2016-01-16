@@ -2,8 +2,8 @@
 #PBS -q verylongq
 #PBS -l walltime=192:00:00
 #PBS -l select=1:ncpus=1
-#PBS -o /nobackup0/omega/halverso/test_sched/pbs_stdout.out
-#PBS -e /nobackup0/omega/halverso/test_sched/pbs_stderr.out
+#PBS -o /nobackup0/omega/halverso/test_sched/trunk/test_output/pbs_stdout.out
+#PBS -e /nobackup0/omega/halverso/test_sched/trunk/test_output/pbs_stderr.out
 #PBS -V
 
 import os
@@ -54,7 +54,7 @@ print('testing parallel process spawning')
 processes = {}
 
 for i in range(10):
-    processes[i] = subprocess.Popen(['create_test_file.py', '/nobackup0/omega/halverso/test_sched/%d.txt' % i],
+    processes[i] = subprocess.Popen(['create_test_file.py', '/nobackup0/omega/halverso/test_sched/trunk/test_output/%d.txt' % i],
                                     stdout=subprocess.PIPE,
                                     stderr=subprocess.PIPE)
 
