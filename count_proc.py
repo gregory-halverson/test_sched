@@ -7,5 +7,7 @@
 #PBS -V
 
 import os
+import multiprocessing
 
 print('PBS_NODEFILE: ' + os.getenv('PBS_NODEFILE'))
+print('CPUs: %d' % multiprocessing.cpu_count())
