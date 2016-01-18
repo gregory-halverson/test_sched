@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     pool = multiprocessing.Pool(processes=12)
 
-    results = pool.map(create_file, args_list)
+    results = [pool.apply(create_file, args) for args in args_list]
 
     print('results:')
     print(results)
