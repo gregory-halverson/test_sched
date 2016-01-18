@@ -7,12 +7,11 @@
 #PBS -V
 
 import os
-from time import sleep
 from datetime import datetime
 import multiprocessing
 
 def create_file(directory, number):
-    filename = directory + '/%d.txt' % i
+    filename = directory + '/%d.txt' % number
 
     print("creating test file '%s'" % filename)
 
@@ -33,7 +32,7 @@ if __name__ == '__main__':
 
     pool = multiprocessing.Pool(processes=12)
 
-    results = [pool.apply(create_file, args) for args in args_list]
+    results = [pool.apply(create_file, args=args) for args in args_list]
 
     print('results:')
     print(results)
