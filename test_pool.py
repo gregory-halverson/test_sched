@@ -1,7 +1,7 @@
 #!/home/halverso/anaconda/bin/python
 #PBS -q shortq
 #PBS -l walltime=00:10:00
-#PBS -l select=128:ncpus=12
+#PBS -l select=30:ncpus=12
 #PBS -o /nobackup0/omega/halverso/test_sched/trunk/test_output/test_pool.out
 #PBS -e /nobackup0/omega/halverso/test_sched/trunk/test_output/test_pool.err
 #PBS -V
@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
     args_list = [(directory, i) for i in range(1000)]
 
-    pool = multiprocessing.Pool(processes=128)
+    pool = multiprocessing.Pool(processes=30)
 
     results = [pool.apply(create_file, args=args) for args in args_list]
 
